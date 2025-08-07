@@ -1,12 +1,25 @@
-const player = document.getElementById("machado")
-let posicaoX = 0
+const machado = document.querySelector(".machado");
+const caveira = document.querySelector('.caveira');
 
-addEventListener('keydown', ad)
-function ad(event) {
-    if(event.key === 'd'){
-        posicaoX += 10
-        player.style.left = posicaoX + 'px'
-    }
+const pulo = () =>{
+
+    machado.classList.add('pulo');
+
+    setTimeout(() => {
+
+    machado.classList.remove('pulo');
+    
+    },500);
 }
 
+const loop = setInterval(() => {
+   const caveiraPosition = caveira.offsetLeft;
+   
+   if (caveiraPosition <= 50) {
+     caveira.style.animation = 'none';
+     caveira.style.left = `${caveiraPosition}px`;
+   }
+}, 10);
 
+
+document.addEventListener('keydown',pulo);
