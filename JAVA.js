@@ -1,23 +1,28 @@
-const machado = document.querySelector(".machado");
+const cavalheiro = document.querySelector(".cavalheiro");
 const caveira = document.querySelector('.caveira');
 
 const pulo = () =>{
 
-    machado.classList.add('pulo');
+    cavalheiro.classList.add('pulo');
 
     setTimeout(() => {
 
-    machado.classList.remove('pulo');
+    cavalheiro.classList.remove('pulo');
     
     },500);
 }
 
 const loop = setInterval(() => {
    const caveiraPosition = caveira.offsetLeft;
-   
-   if (caveiraPosition <= 50) {
+   const cavalheiroPosition = +window.getComputedStyle(cavalheiro).bottom.replace('px', '');
+
+   if (caveiraPosition <= 50 && cavalheiroPosition >0 && cavalheiroPosition < 120) {
+
      caveira.style.animation = 'none';
      caveira.style.left = `${caveiraPosition}px`;
+
+     cavalheiro.style.animation = 'none';
+     cavalheiro.style.bottom = `${cavalheiroPosition}px`;
    }
 }, 10);
 
