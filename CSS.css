@@ -1,73 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #333;
+    font-family: "Press Start 2P", sans-serif;
+}
+
+canvas {
+    background-color: #121212;
     
 }
 
-.carla{
-    margin: 80px
-    
-}
-
-.game-board{
-    width: 80%;
-    height: 500px;
-    border: 1px solid #ffffff;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-    background-image: url("https://t3.ftcdn.net/jpg/07/19/26/92/360_F_719269261_nWu4SEqkEwBDuuRMt3MXqRRpraOFQoJU.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
-
-.caveira{
-    position: absolute;
-    bottom: 0;
-    width: 12rem;
-    animation: caveira-animation 2s infinite linear; 
-    
-}
-
-.cavalheiro{
-    position: absolute;
-    bottom: 20px;
-}
-
-.pulo{
-      animation: pulo 600ms ease-out;
-
-}
-
-img{
-    background: none;
-}
-
-@keyframes caveira-animation{
-    from{
-        right: -150px;
-    }
-    to {
-       right: 100%;
-    }
-}
-@keyframes pulo {
-
-    0%{
-        bottom: 0;
-    }
-    40%{
-        bottom: 210px;
-    }
-    50%{
-        bottom: 210px;
-    }
-    60%{
-        bottom: 210px;
-    }
-    100%{
-        bottom: 0;
-    }
-}
